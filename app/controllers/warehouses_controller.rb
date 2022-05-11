@@ -10,7 +10,7 @@ class WarehousesController < ApplicationController
   def create
     @warehouse = Warehouse.new(warehouse_params)
     if @warehouse.save
-      redirect_to root_path, notice: "Galpão cadastrado com sucesso."
+       redirect_to root_path, notice: "Galpão cadastrado com sucesso."
     else
       flash.now[:notice] = "Galpão não cadastrado"
       render 'new'
@@ -20,7 +20,6 @@ class WarehousesController < ApplicationController
   def edit; end
 
   def update
-
     if @warehouse.update(warehouse_params)
       redirect_to warehouse_path(@warehouse.id), notice: 'Galpão Atualizado com sucesso'
     else
@@ -42,6 +41,6 @@ class WarehousesController < ApplicationController
 
   def warehouse_params
     params.require(:warehouse).permit(:name, :code, :city, :description, :area, :cep,
-                                      :address) 
+                                      :address)
   end
 end

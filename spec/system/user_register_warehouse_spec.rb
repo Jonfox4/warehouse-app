@@ -57,4 +57,16 @@ describe 'Usuário cadastra um galpão' do
     expect(page).to have_content 'CEP não pode ficar em branco'
     expect(page).to have_content 'Área não pode ficar em branco'
     end
+
+    it 'com Cep invalido' do
+    #Arrange
+    #Act
+    visit root_path
+    click_on 'Cadastrar Galpão'
+    fill_in 'CEP', with: '00000-0000'
+    click_on "Enviar"
+    #Assert
+    expect(page).to have_content 'Galpão não cadastrado'
+    expect(page).to have_content 'No formato xxxxx-xxx'
+    end
 end
