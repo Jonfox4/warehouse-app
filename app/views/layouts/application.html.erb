@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application" %>
   </head>
-
   <body>
     <header>
       <h1> Galpões & Estoques </h1>
+      <nav>
+       <%= link_to 'Fornecedores', suppliers_path %>
+      </nav>
     </header>
     <main>
     <div>
-    <%= flash[:notice] %>
+      <%= alert %>
+      <%= flash[:notice] %>
     </div>
       <%= yield %>
     </main>

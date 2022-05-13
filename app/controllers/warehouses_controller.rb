@@ -10,7 +10,7 @@ class WarehousesController < ApplicationController
   def create
     @warehouse = Warehouse.new(warehouse_params)
     if @warehouse.save
-       redirect_to root_path, notice: "Galpão cadastrado com sucesso."
+      redirect_to root_path, notice: "Galpão cadastrado com sucesso."
     else
       flash.now[:notice] = "Galpão não cadastrado"
       render 'new'
