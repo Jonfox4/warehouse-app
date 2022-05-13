@@ -26,7 +26,13 @@ class SuppliersController < ApplicationController
   end
 
   def update
-    @supplier - Supplier.find(params[:id])
+    @supplier = Supplier.find(params[:id])
+    if @supplier.update(supplier_params)
+      redirect_to supplier_path(params[:id]), notice: 'Fornecedor atualizado com sucesso'
+    else
+      flash.now[:notice] = 'Não foi possível atualizar Fornecedor'
+      render 'edit'
+    end
   end
 
   def supplier_params
