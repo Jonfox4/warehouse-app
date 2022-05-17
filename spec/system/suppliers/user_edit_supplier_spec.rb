@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário edita um fornecedor' do
   it 'a partir da páginas de detalhes' do
     #Arrange
-    warehouse = Supplier.create!(corporate_name: 'Exponencial Marketing', brand_name: 'Exponencial Marketing', registration_number: '00000000000000', full_address: 'Av. do Marketing',
+    supplier = Supplier.create!(corporate_name: 'Exponencial Marketing', brand_name: 'Exponencial Marketing', registration_number: '00000000000000', full_address: 'Av. do Marketing',
                                  city: 'São Bernardo', state: 'São Paulo', email: 'Exponencial@contato.com.br')
     #Act
     visit root_path
@@ -20,7 +20,7 @@ describe 'Usuário edita um fornecedor' do
   describe 'Usuário edita um fornecedor' do
     it 'com dados vazios' do
       #Arrange
-      warehouse = Supplier.create!(corporate_name: 'Exponencial Marketing', brand_name: 'Exponencial Marketing', registration_number: '00000000000000', full_address: 'Av. do Marketing',
+      supplier = Supplier.create!(corporate_name: 'Exponencial Marketing', brand_name: 'Exponencial Marketing', registration_number: '00000000000000', full_address: 'Av. do Marketing',
                                    city: 'São Bernardo', state: 'São Paulo', email: 'Exponencial@contato.com.br')
       #Act
       visit root_path
